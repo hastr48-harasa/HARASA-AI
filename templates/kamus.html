@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamus Ilmu & Teknologi Pangan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <div class="card">
+            <h1>Kamus Ilmu & Teknologi Pangan</h1>
+            <p class="subtitle">Cari istilah seputar food science, technology, & engineering.</p>
+            
+            <!-- PERBAIKAN DI SINI: action diubah ke "/kamus" -->
+            <form method="POST" action="/kamus">
+                <label for="istilah">Cari Istilah</label>
+                <input type="text" id="istilah" name="istilah" required placeholder="Contoh: Pasteurisasi, Emulsifier, dll.">
+                <button type="submit">🔍 Cari Makna</button>
+            </form>
+        </div>
+
+        <!-- Bagian ini hanya akan muncul setelah form di-submit -->
+        {% if definisi %}
+            <div class="result-card">
+                <h2>Definisi untuk: <strong>{{ istilah }}</strong></h2>
+                
+                <div class="ai-fact">
+                    <p>{{ definisi }}</p>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+
+</body>
+</html>
