@@ -14,9 +14,7 @@
     <div class="container">
         <div class="card">
             <h1>Kamus Ilmu & Teknologi Pangan</h1>
-            <p class="subtitle">Cari istilah seputar food science, technology, & engineering.</p>
-            
-            <!-- PERBAIKAN DI SINI: action diubah ke "/kamus" -->
+            <p class="subtitle">Cari istilah seputar food science, technology, & engineering.</p> 
             <form method="POST" action="/kamus">
                 <label for="istilah">Cari Istilah</label>
                 <input type="text" id="istilah" name="istilah" required placeholder="Contoh: Pasteurisasi, Emulsifier, dll.">
@@ -24,7 +22,6 @@
             </form>
         </div>
 
-        <!-- Bagian ini hanya akan muncul setelah form di-submit -->
         {% if definisi %}
             <div class="result-card">
                 <h2>Definisi untuk: <strong>{{ istilah }}</strong></h2>
